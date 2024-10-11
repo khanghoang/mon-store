@@ -15,6 +15,7 @@ export default function Payment() {
     const paymentId = generateRandomId();
 
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
     const link = `${apiUrl}/api/make-payment?payment_id=${encodeURIComponent(paymentId)}`;
     const statusLink = `/api/payment-status?payment_id=${paymentId}`;
 
