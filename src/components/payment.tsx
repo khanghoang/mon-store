@@ -14,9 +14,8 @@ export default function Payment() {
   useEffect(() => {
     const paymentId = generateRandomId();
 
-    const host = '192.168.86.31'
-    const port = '3000'
-    const link = `http://${host}:${port}/api/make-payment?payment_id=${encodeURIComponent(paymentId)}`;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const link = `${apiUrl}/api/make-payment?payment_id=${encodeURIComponent(paymentId)}`;
     const statusLink = `/api/payment-status?payment_id=${paymentId}`;
 
     setPaymentId(paymentId)
